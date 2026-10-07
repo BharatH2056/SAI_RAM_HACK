@@ -1,0 +1,513 @@
+{
+  "note": "Hospital names and approximate locations are real; capabilities, bed counts and specialists are SIMULATED sample data for hackathon demo only.",
+  "city": "Bangalore",
+  "suggested_demo_patient_location": {
+    "area": "Hebbal",
+    "latitude": 13.0358,
+    "longitude": 77.597
+  },
+  "hospitals": [
+    {
+      "id": "H01",
+      "name": "Victoria Hospital",
+      "area": "Fort / City Market",
+      "latitude": 12.9634,
+      "longitude": 77.5755,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": true,
+      "has_blood_bank": true,
+      "icu_beds_available": 3,
+      "specialists_on_duty": [
+        "general surgeon",
+        "orthopedic surgeon"
+      ]
+    },
+    {
+      "id": "H02",
+      "name": "Bowring & Lady Curzon Hospital",
+      "area": "Shivajinagar",
+      "latitude": 12.9856,
+      "longitude": 77.6046,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "general surgeon",
+        "gynecologist"
+      ]
+    },
+    {
+      "id": "H03",
+      "name": "Jayadeva Institute of Cardiovascular Sciences",
+      "area": "Jayanagar / BTM",
+      "latitude": 12.9176,
+      "longitude": 77.5995,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": false,
+      "has_trauma_center": false,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 5,
+      "specialists_on_duty": [
+        "cardiologist",
+        "cardiac surgeon"
+      ]
+    },
+    {
+      "id": "H04",
+      "name": "NIMHANS",
+      "area": "Hosur Road",
+      "latitude": 12.943,
+      "longitude": 77.596,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 4,
+      "specialists_on_duty": [
+        "neurologist",
+        "neurosurgeon"
+      ]
+    },
+    {
+      "id": "H05",
+      "name": "Manipal Hospital (Old Airport Road)",
+      "area": "Old Airport Road",
+      "latitude": 12.9585,
+      "longitude": 77.6485,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 6,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist",
+        "trauma surgeon"
+      ]
+    },
+    {
+      "id": "H06",
+      "name": "Apollo Hospitals (Bannerghatta Road)",
+      "area": "Bannerghatta Road",
+      "latitude": 12.8955,
+      "longitude": 77.599,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 0,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist"
+      ]
+    },
+    {
+      "id": "H07",
+      "name": "Fortis Hospital (Bannerghatta Road)",
+      "area": "Bannerghatta Road",
+      "latitude": 12.893,
+      "longitude": 77.601,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 3,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist"
+      ]
+    },
+    {
+      "id": "H08",
+      "name": "Fortis Hospital (Cunningham Road)",
+      "area": "Cunningham Road",
+      "latitude": 12.988,
+      "longitude": 77.592,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": false,
+      "has_trauma_center": false,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "cardiologist"
+      ]
+    },
+    {
+      "id": "H09",
+      "name": "Narayana Health City",
+      "area": "Bommasandra",
+      "latitude": 12.819,
+      "longitude": 77.691,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 8,
+      "specialists_on_duty": [
+        "cardiac surgeon",
+        "neurologist",
+        "trauma surgeon"
+      ]
+    },
+    {
+      "id": "H10",
+      "name": "St. John's Medical College Hospital",
+      "area": "Koramangala / Sarjapur Rd",
+      "latitude": 12.93,
+      "longitude": 77.62,
+      "type": "Private (Trust)",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": true,
+      "has_blood_bank": true,
+      "icu_beds_available": 4,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist",
+        "burn specialist"
+      ]
+    },
+    {
+      "id": "H11",
+      "name": "Aster CMI Hospital",
+      "area": "Hebbal / Sahakara Nagar",
+      "latitude": 13.069,
+      "longitude": 77.598,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 5,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist",
+        "obstetrician"
+      ]
+    },
+    {
+      "id": "H12",
+      "name": "Columbia Asia Hospital (Hebbal)",
+      "area": "Hebbal",
+      "latitude": 13.043,
+      "longitude": 77.59,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "general physician",
+        "obstetrician"
+      ]
+    },
+    {
+      "id": "H13",
+      "name": "Sakra World Hospital",
+      "area": "Marathahalli",
+      "latitude": 12.9306,
+      "longitude": 77.6914,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 3,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist"
+      ]
+    },
+    {
+      "id": "H14",
+      "name": "Mallya Hospital",
+      "area": "Vittal Mallya Road",
+      "latitude": 12.969,
+      "longitude": 77.596,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 0,
+      "specialists_on_duty": [
+        "cardiologist"
+      ]
+    },
+    {
+      "id": "H15",
+      "name": "Sparsh Hospital (Infantry Road)",
+      "area": "Infantry Road",
+      "latitude": 12.985,
+      "longitude": 77.601,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": false,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "orthopedic surgeon"
+      ]
+    },
+    {
+      "id": "H16",
+      "name": "Hosmat Hospital",
+      "area": "Ashok Nagar",
+      "latitude": 12.977,
+      "longitude": 77.602,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "orthopedic surgeon",
+        "general surgeon"
+      ]
+    },
+    {
+      "id": "H17",
+      "name": "Vani Vilas Hospital",
+      "area": "City Market",
+      "latitude": 12.959,
+      "longitude": 77.574,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": false,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "gynecologist",
+        "neonatologist"
+      ]
+    },
+    {
+      "id": "H18",
+      "name": "Cloudnine Hospital (Jayanagar)",
+      "area": "Jayanagar",
+      "latitude": 12.925,
+      "longitude": 77.5825,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": false,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": false,
+      "icu_beds_available": 1,
+      "specialists_on_duty": [
+        "obstetrician",
+        "neonatologist"
+      ]
+    },
+    {
+      "id": "H19",
+      "name": "Sir C.V. Raman General Hospital",
+      "area": "Indiranagar",
+      "latitude": 12.981,
+      "longitude": 77.645,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "general surgeon",
+        "gynecologist"
+      ]
+    },
+    {
+      "id": "H20",
+      "name": "Baptist Hospital",
+      "area": "Hebbal",
+      "latitude": 13.039,
+      "longitude": 77.594,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 1,
+      "specialists_on_duty": [
+        "general physician",
+        "obstetrician"
+      ]
+    },
+    {
+      "id": "H21",
+      "name": "BGS Gleneagles Global Hospital",
+      "area": "Kengeri",
+      "latitude": 12.906,
+      "longitude": 77.488,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 4,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist"
+      ]
+    },
+    {
+      "id": "H22",
+      "name": "KIMS Hospital",
+      "area": "V.V. Puram",
+      "latitude": 12.944,
+      "longitude": 77.573,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 3,
+      "specialists_on_duty": [
+        "general surgeon",
+        "gynecologist"
+      ]
+    },
+    {
+      "id": "H23",
+      "name": "Ramaiah Memorial Hospital",
+      "area": "MSR Nagar",
+      "latitude": 13.031,
+      "longitude": 77.57,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": true,
+      "has_burn_unit": true,
+      "has_blood_bank": true,
+      "icu_beds_available": 5,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist",
+        "burn specialist"
+      ]
+    },
+    {
+      "id": "H24",
+      "name": "Sagar Hospitals",
+      "area": "Kumaraswamy Layout",
+      "latitude": 12.89,
+      "longitude": 77.562,
+      "type": "Private",
+      "emergency_24x7": true,
+      "has_cath_lab": true,
+      "has_stroke_unit": true,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 2,
+      "specialists_on_duty": [
+        "cardiologist",
+        "neurologist"
+      ]
+    },
+    {
+      "id": "H25",
+      "name": "Sanjay Gandhi Accident Trauma & Orthopaedic Hospital",
+      "area": "Jayanagar",
+      "latitude": 12.921,
+      "longitude": 77.587,
+      "type": "Government",
+      "emergency_24x7": true,
+      "has_cath_lab": false,
+      "has_stroke_unit": false,
+      "has_trauma_center": true,
+      "has_maternity": false,
+      "has_burn_unit": false,
+      "has_blood_bank": true,
+      "icu_beds_available": 3,
+      "specialists_on_duty": [
+        "trauma surgeon",
+        "orthopedic surgeon"
+      ]
+    }
+  ]
+}

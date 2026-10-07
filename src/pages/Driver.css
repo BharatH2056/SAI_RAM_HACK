@@ -1,0 +1,134 @@
+/* src/pages/Driver.css */
+.gh-driver-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: calc(100vh - 70px);
+}
+
+.gh-driver-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px 24px;
+  border-radius: var(--gh-radius-lg);
+  border: 2px solid var(--gh-accent);
+  background-color: var(--gh-surface);
+  box-shadow: var(--gh-shadow-glow), var(--gh-shadow-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gh-driver-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--gh-accent) 0%, #ea580c 100%);
+}
+
+.gh-driver-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gh-driver-destination {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.gh-driver-destination__name {
+  font-family: var(--gh-font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gh-text);
+  line-height: 1.2;
+}
+
+.gh-driver-destination__area {
+  font-size: 1rem;
+  color: var(--gh-text-muted);
+  font-weight: 600;
+}
+
+/* Big Action Buttons */
+.gh-driver-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gh-driver-btn-nav {
+  height: 64px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  border-radius: var(--gh-radius);
+  background-color: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+  transition: all var(--gh-transition);
+}
+.gh-driver-btn-nav:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  transform: translateY(-2px);
+}
+
+.gh-driver-simulation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--gh-radius-full);
+  background-color: var(--gh-surface-2);
+  border: 1px solid var(--gh-border);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gh-accent);
+}
+
+/* Waiting Empty State */
+.gh-driver-waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  gap: 18px;
+  text-align: center;
+  background-color: var(--gh-surface);
+  border-radius: var(--gh-radius-lg);
+  border: 1px dashed var(--gh-border);
+}
+
+.gh-driver-pulse-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--gh-accent-light);
+  color: var(--gh-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: gh-driver-pulse 2s infinite ease-in-out;
+}
+
+@keyframes gh-driver-pulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}

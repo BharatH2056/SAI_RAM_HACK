@@ -1,0 +1,274 @@
+/* src/pages/Landing.css */
+.gh-landing {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* Hero Section */
+.gh-landing__hero {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.gh-landing__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--gh-radius-full);
+  background-color: var(--gh-accent-light);
+  color: var(--gh-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid var(--gh-accent);
+}
+
+.gh-landing__headline {
+  font-family: var(--gh-font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--gh-text);
+}
+
+.gh-landing__subline {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--gh-text-muted);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* Before / After Comparison */
+.gh-landing__comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.gh-compare-card {
+  padding: 28px;
+  border-radius: var(--gh-radius-lg);
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-surface);
+  box-shadow: var(--gh-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gh-compare-card--old {
+  border-left: 4px solid var(--gh-danger);
+}
+
+.gh-compare-card--golden {
+  border-left: 4px solid var(--gh-accent);
+  background-color: var(--gh-surface);
+  box-shadow: var(--gh-shadow-glow), var(--gh-shadow);
+}
+
+.gh-compare-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gh-compare-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gh-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gh-compare-card__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gh-compare-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+
+.gh-compare-step__icon {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.gh-compare-step__desc {
+  color: var(--gh-text-muted);
+  font-size: 0.85rem;
+}
+
+.gh-compare-card__outcome {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px dashed var(--gh-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+/* Roles Grid */
+.gh-landing__section-title {
+  font-family: var(--gh-font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gh-text);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.gh-landing__section-desc {
+  text-align: center;
+  color: var(--gh-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.gh-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.gh-role-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-surface);
+  border-radius: var(--gh-radius-lg);
+  box-shadow: var(--gh-shadow);
+  transition: all var(--gh-transition);
+}
+
+.gh-role-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gh-accent);
+  box-shadow: var(--gh-shadow-lg);
+}
+
+.gh-role-card__icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--gh-radius);
+  background-color: var(--gh-accent-light);
+  color: var(--gh-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gh-role-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gh-text);
+}
+
+.gh-role-card__desc {
+  font-size: 0.9rem;
+  color: var(--gh-text-muted);
+  line-height: 1.5;
+}
+
+.gh-role-card__action {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gh-accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.gh-role-card--locked {
+  background: var(--gh-surface-2);
+  border-style: dashed;
+}
+
+.gh-role-card__action--locked {
+  color: var(--gh-muted);
+}
+
+/* Demo Mode Box */
+.gh-demo-box {
+  background: linear-gradient(135deg, var(--gh-surface) 0%, var(--gh-surface-2) 100%);
+  border: 2px dashed var(--gh-accent);
+  border-radius: var(--gh-radius-lg);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  box-shadow: var(--gh-shadow);
+}
+
+.gh-demo-box__content {
+  max-width: 620px;
+}
+
+.gh-demo-box__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gh-text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gh-demo-box__desc {
+  color: var(--gh-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.gh-demo-box__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Footer note */
+.gh-landing__footer {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--gh-text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--gh-border);
+}
+
+@media (max-width: 860px) {
+  .gh-landing__comparison {
+    grid-template-columns: 1fr;
+  }
+  .gh-demo-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gh-demo-box__actions {
+    width: 100%;
+  }
+}

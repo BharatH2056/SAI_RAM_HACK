@@ -1,0 +1,32 @@
+{
+  "name": "goldenhour-backend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "seed": "node scripts/seedHospitals.js",
+    "seed-users": "node scripts/seedUsers.js",
+    "reset-demo": "node scripts/resetDemo.js",
+    "demo": "node scripts/demo-cli.js",
+    "realtime-check": "node scripts/realtime-check.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "firebase": "^11.4.0",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^1.52.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
+  }
+}

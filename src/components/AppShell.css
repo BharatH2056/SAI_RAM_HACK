@@ -1,0 +1,150 @@
+/* src/components/AppShell.css */
+.gh-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: var(--gh-accent);
+  color: var(--gh-text-inverse);
+  padding: 8px 16px;
+  z-index: 10000;
+  border-radius: var(--gh-radius-sm);
+  transition: top 0.2s;
+  font-weight: 700;
+}
+.gh-skip-link:focus {
+  top: 10px;
+}
+
+.gh-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--gh-surface);
+  border-bottom: 1px solid var(--gh-border);
+  box-shadow: var(--gh-shadow-sm);
+  backdrop-filter: blur(8px);
+}
+
+.gh-header__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gh-header__left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gh-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--gh-font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--gh-text);
+  letter-spacing: -0.02em;
+}
+
+.gh-logo__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--gh-radius-sm);
+  background: linear-gradient(135deg, var(--gh-accent) 0%, #ea580c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: var(--gh-shadow-glow);
+}
+
+.gh-logo__text-gold {
+  color: var(--gh-accent);
+}
+
+.gh-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gh-nav-link {
+  padding: 8px 14px;
+  border-radius: var(--gh-radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gh-text-muted);
+  transition: all var(--gh-transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gh-nav-link:hover {
+  color: var(--gh-text);
+  background-color: var(--gh-surface-2);
+}
+
+.gh-nav-link--active {
+  color: var(--gh-accent);
+  background-color: var(--gh-accent-light);
+}
+
+.gh-header__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gh-theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--gh-radius-sm);
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-surface-2);
+  color: var(--gh-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--gh-transition);
+}
+.gh-theme-toggle:hover {
+  border-color: var(--gh-accent);
+  color: var(--gh-accent);
+}
+
+.gh-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile responsive navigation */
+@media (max-width: 860px) {
+  .gh-header__container {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+  }
+  .gh-header__nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-top: 8px;
+    border-top: 1px solid var(--gh-border);
+  }
+}

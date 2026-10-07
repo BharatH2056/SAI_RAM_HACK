@@ -1,0 +1,74 @@
+/* src/components/shared/StatusBadge.css */
+.gh-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--gh-radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.gh-status-badge--created {
+  background-color: var(--gh-warning-light);
+  color: var(--gh-warning);
+  border-color: var(--gh-warning-border);
+}
+
+.gh-status-badge--confirmed {
+  background-color: var(--gh-accent-light);
+  color: var(--gh-accent);
+  border-color: var(--gh-accent);
+}
+
+.gh-status-badge--dispatched {
+  background-color: var(--gh-accent-light);
+  color: var(--gh-accent);
+  border-color: var(--gh-accent);
+}
+
+.gh-status-badge--accepted {
+  background-color: var(--gh-success-light);
+  color: var(--gh-success);
+  border-color: var(--gh-success-border);
+}
+
+.gh-status-badge--enroute {
+  background-color: var(--gh-success-light);
+  color: var(--gh-success);
+  border-color: var(--gh-success-border);
+}
+
+.gh-status-badge--arrived {
+  background-color: var(--gh-success-light);
+  color: var(--gh-success);
+  border-color: var(--gh-success-border);
+}
+
+.gh-status-badge--cancelled {
+  background-color: var(--gh-surface-2);
+  color: var(--gh-muted);
+  border-color: var(--gh-border);
+}
+
+/* Pulsing dot for active live statuses */
+.gh-status-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.gh-status-badge--enroute .gh-status-badge__dot {
+  animation: gh-pulse 1.5s infinite;
+}
+
+@keyframes gh-pulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}

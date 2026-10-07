@@ -1,0 +1,148 @@
+/* src/pages/SOS.css */
+.gh-sos-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 18px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  gap: 28px;
+  text-align: center;
+}
+
+.gh-sos-hero-text h1 {
+  font-family: var(--gh-font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gh-text);
+  line-height: 1.2;
+}
+
+.gh-sos-hero-text p {
+  font-size: 1rem;
+  color: var(--gh-text-muted);
+  margin-top: 8px;
+}
+
+/* Giant Calming Mic Button */
+.gh-mic-button-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.gh-mic-button {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--gh-accent) 0%, #d97706 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+  transition: all var(--gh-transition);
+  user-select: none;
+  z-index: 2;
+}
+
+.gh-mic-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(245, 158, 11, 0.6);
+}
+
+.gh-mic-button--listening {
+  background: linear-gradient(135deg, var(--gh-danger) 0%, #b91c1c 100%);
+  box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
+  animation: gh-mic-ring 1.8s infinite;
+}
+
+@keyframes gh-mic-ring {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { transform: scale(1.08); box-shadow: 0 0 0 25px rgba(220, 38, 38, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.gh-mic-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Live transcript box */
+.gh-sos-transcript-card {
+  width: 100%;
+  padding: 18px;
+  background-color: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  border-radius: var(--gh-radius-lg);
+  box-shadow: var(--gh-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.gh-sos-transcript-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gh-text);
+  min-height: 48px;
+  line-height: 1.4;
+}
+
+/* Post-creation Arranging Help State */
+.gh-sos-arranging-card {
+  width: 100%;
+  padding: 24px;
+  background-color: var(--gh-surface);
+  border: 2px solid var(--gh-accent);
+  border-radius: var(--gh-radius-lg);
+  box-shadow: var(--gh-shadow-glow), var(--gh-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  align-items: center;
+}
+
+/* Fallback: 5 Emergency Category Buttons */
+.gh-sos-fallback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.gh-sos-fallback-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  border-radius: var(--gh-radius);
+  color: var(--gh-text);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all var(--gh-transition);
+  min-height: 80px;
+}
+
+.gh-sos-fallback-btn:hover {
+  border-color: var(--gh-accent);
+  background-color: var(--gh-surface-2);
+  transform: translateY(-2px);
+}

@@ -1,0 +1,60 @@
+/* src/components/shared/BigNumber.css */
+.gh-bignumber {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.gh-bignumber__value-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.gh-bignumber__value {
+  font-family: var(--gh-font-display);
+  font-weight: 800;
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--gh-text);
+}
+
+.gh-bignumber--lg .gh-bignumber__value {
+  font-size: 3.2rem;
+}
+
+.gh-bignumber--sm .gh-bignumber__value {
+  font-size: 1.6rem;
+}
+
+.gh-bignumber__unit {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gh-text-muted);
+}
+
+.gh-bignumber__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gh-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* Color role overrides */
+.gh-bignumber--accent .gh-bignumber__value {
+  color: var(--gh-accent);
+}
+
+.gh-bignumber--success .gh-bignumber__value {
+  color: var(--gh-success);
+}
+
+.gh-bignumber--danger .gh-bignumber__value {
+  color: var(--gh-danger);
+}
+
+.gh-bignumber--warning .gh-bignumber__value {
+  color: var(--gh-warning);
+}

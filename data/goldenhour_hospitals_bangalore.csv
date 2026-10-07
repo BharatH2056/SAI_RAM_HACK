@@ -1,0 +1,26 @@
+id,name,area,latitude,longitude,type,emergency_24x7,has_cath_lab,has_stroke_unit,has_trauma_center,has_maternity,has_burn_unit,has_blood_bank,icu_beds_available,specialists_on_duty
+H01,Victoria Hospital,Fort / City Market,12.9634,77.5755,Government,True,False,False,True,True,True,True,3,general surgeon; orthopedic surgeon
+H02,Bowring & Lady Curzon Hospital,Shivajinagar,12.9856,77.6046,Government,True,False,False,True,True,False,True,2,general surgeon; gynecologist
+H03,Jayadeva Institute of Cardiovascular Sciences,Jayanagar / BTM,12.9176,77.5995,Government,True,True,False,False,False,False,True,5,cardiologist; cardiac surgeon
+H04,NIMHANS,Hosur Road,12.943,77.596,Government,True,False,True,True,False,False,True,4,neurologist; neurosurgeon
+H05,Manipal Hospital (Old Airport Road),Old Airport Road,12.9585,77.6485,Private,True,True,True,True,True,False,True,6,cardiologist; neurologist; trauma surgeon
+H06,Apollo Hospitals (Bannerghatta Road),Bannerghatta Road,12.8955,77.599,Private,True,True,True,True,True,False,True,0,cardiologist; neurologist
+H07,Fortis Hospital (Bannerghatta Road),Bannerghatta Road,12.893,77.601,Private,True,True,True,True,True,False,True,3,cardiologist; neurologist
+H08,Fortis Hospital (Cunningham Road),Cunningham Road,12.988,77.592,Private,True,True,False,False,False,False,True,2,cardiologist
+H09,Narayana Health City,Bommasandra,12.819,77.691,Private,True,True,True,True,False,False,True,8,cardiac surgeon; neurologist; trauma surgeon
+H10,St. John's Medical College Hospital,Koramangala / Sarjapur Rd,12.93,77.62,Private (Trust),True,True,True,True,True,True,True,4,cardiologist; neurologist; burn specialist
+H11,Aster CMI Hospital,Hebbal / Sahakara Nagar,13.069,77.598,Private,True,True,True,True,True,False,True,5,cardiologist; neurologist; obstetrician
+H12,Columbia Asia Hospital (Hebbal),Hebbal,13.043,77.59,Private,True,False,False,True,True,False,True,2,general physician; obstetrician
+H13,Sakra World Hospital,Marathahalli,12.9306,77.6914,Private,True,True,True,True,False,False,True,3,cardiologist; neurologist
+H14,Mallya Hospital,Vittal Mallya Road,12.969,77.596,Private,True,True,False,True,False,False,True,0,cardiologist
+H15,Sparsh Hospital (Infantry Road),Infantry Road,12.985,77.601,Private,True,False,False,True,False,False,False,2,orthopedic surgeon
+H16,Hosmat Hospital,Ashok Nagar,12.977,77.602,Private,True,False,False,True,False,False,True,2,orthopedic surgeon; general surgeon
+H17,Vani Vilas Hospital,City Market,12.959,77.574,Government,True,False,False,False,True,False,True,2,gynecologist; neonatologist
+H18,Cloudnine Hospital (Jayanagar),Jayanagar,12.925,77.5825,Private,True,False,False,False,True,False,False,1,obstetrician; neonatologist
+H19,Sir C.V. Raman General Hospital,Indiranagar,12.981,77.645,Government,True,False,False,True,True,False,True,2,general surgeon; gynecologist
+H20,Baptist Hospital,Hebbal,13.039,77.594,Private,True,False,False,True,True,False,True,1,general physician; obstetrician
+H21,BGS Gleneagles Global Hospital,Kengeri,12.906,77.488,Private,True,True,True,True,True,False,True,4,cardiologist; neurologist
+H22,KIMS Hospital,V.V. Puram,12.944,77.573,Government,True,False,False,True,True,False,True,3,general surgeon; gynecologist
+H23,Ramaiah Memorial Hospital,MSR Nagar,13.031,77.57,Private,True,True,True,True,True,True,True,5,cardiologist; neurologist; burn specialist
+H24,Sagar Hospitals,Kumaraswamy Layout,12.89,77.562,Private,True,True,True,True,False,False,True,2,cardiologist; neurologist
+H25,Sanjay Gandhi Accident Trauma & Orthopaedic Hospital,Jayanagar,12.921,77.587,Government,True,False,False,True,False,False,True,3,trauma surgeon; orthopedic surgeon

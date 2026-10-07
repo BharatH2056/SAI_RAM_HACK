@@ -1,0 +1,118 @@
+/* src/components/dispatcher/TimeSavedBar.css */
+.gh-timesaved-panel {
+  background-color: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  border-radius: var(--gh-radius);
+  padding: 18px 20px;
+  box-shadow: var(--gh-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gh-timesaved-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gh-timesaved-panel__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gh-text);
+}
+
+.gh-timesaved-panel__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gh-timeline-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gh-timeline-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gh-text-muted);
+}
+
+.gh-timeline-track {
+  height: 22px;
+  background-color: var(--gh-surface-2);
+  border-radius: var(--gh-radius-sm);
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  border: 1px solid var(--gh-border);
+}
+
+.gh-timeline-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gh-timeline-segment--old-leg1 {
+  background-color: var(--gh-danger);
+}
+
+.gh-timeline-segment--old-delay {
+  background-color: #991b1b;
+  opacity: 0.9;
+}
+
+.gh-timeline-segment--old-leg2 {
+  background-color: #7f1d1d;
+}
+
+.gh-timeline-segment--golden {
+  background: linear-gradient(90deg, var(--gh-accent) 0%, #ea580c 100%);
+  color: #ffffff;
+}
+
+.gh-timesaved-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background-color: var(--gh-surface-2);
+  padding: 10px 14px;
+  border-radius: var(--gh-radius-sm);
+  border: 1px solid var(--gh-border);
+  font-size: 0.78rem;
+}
+
+.gh-timesaved-breakdown-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-timesaved-breakdown-item strong {
+  font-size: 0.92rem;
+  color: var(--gh-text);
+}
+
+.gh-timesaved-disclaimer {
+  font-size: 0.73rem;
+  color: var(--gh-text-muted);
+  line-height: 1.4;
+  border-top: 1px dashed var(--gh-border);
+  padding-top: 10px;
+}

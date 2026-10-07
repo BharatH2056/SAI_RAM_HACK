@@ -1,0 +1,64 @@
+/* src/components/hospital/GoldenHourRing.css */
+.gh-timer-ring-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.gh-timer-ring-svg {
+  transform: rotate(-90deg);
+}
+
+.gh-timer-ring-circle-bg {
+  fill: none;
+  stroke: var(--gh-border);
+}
+
+.gh-timer-ring-circle-progress {
+  fill: none;
+  stroke: var(--gh-accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+}
+
+.gh-timer-ring-circle-progress--urgent {
+  stroke: var(--gh-danger);
+  animation: gh-ring-pulse 1s infinite alternate;
+}
+
+@keyframes gh-ring-pulse {
+  from { stroke-width: 8; opacity: 0.9; }
+  to { stroke-width: 10; opacity: 1; }
+}
+
+.gh-timer-ring-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.gh-timer-ring-digits {
+  font-family: var(--gh-font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--gh-text);
+  letter-spacing: -0.02em;
+}
+
+.gh-timer-ring-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gh-text-muted);
+  margin-top: 4px;
+}

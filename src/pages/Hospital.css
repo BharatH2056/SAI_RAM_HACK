@@ -1,0 +1,242 @@
+/* src/pages/Hospital.css */
+.gh-hospital-page {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hospital Selector Header */
+.gh-hospital-header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gh-hospital-select-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gh-hospital-select {
+  padding: 10px 16px;
+  border-radius: var(--gh-radius);
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-surface-2);
+  color: var(--gh-text);
+  font-weight: 700;
+  font-size: 1.05rem;
+  min-width: 300px;
+  cursor: pointer;
+}
+
+/* Two-Panel Layout */
+.gh-hospital-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Panel A: Incoming Alert */
+.gh-incoming-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gh-incoming-card {
+  border: 2px solid var(--gh-accent);
+  background-color: var(--gh-surface);
+  border-radius: var(--gh-radius-lg);
+  padding: 24px;
+  box-shadow: var(--gh-shadow-glow), var(--gh-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gh-incoming-card--pulsing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--gh-accent) 0%, var(--gh-danger) 100%);
+  animation: gh-incoming-strip 2s infinite linear;
+}
+
+@keyframes gh-incoming-strip {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.gh-incoming-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.gh-incoming-patient-details {
+  background-color: var(--gh-surface-2);
+  padding: 14px;
+  border-radius: var(--gh-radius);
+  border: 1px solid var(--gh-border);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Panel B: Status Management */
+.gh-status-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ICU Bed Stepper */
+.gh-bed-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: var(--gh-radius);
+  background-color: var(--gh-surface-2);
+  border: 1px solid var(--gh-border);
+}
+
+.gh-bed-stepper__controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gh-bed-stepper__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--gh-radius);
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-surface);
+  color: var(--gh-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--gh-transition);
+}
+.gh-bed-stepper__btn:hover:not(:disabled) {
+  border-color: var(--gh-accent);
+  color: var(--gh-accent);
+}
+.gh-bed-stepper__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.gh-bed-stepper__number {
+  font-family: var(--gh-font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--gh-text);
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Capabilities toggles grid */
+.gh-cap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gh-cap-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: var(--gh-radius);
+  border: 1px solid var(--gh-border);
+  background-color: var(--gh-surface);
+  color: var(--gh-text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--gh-transition);
+}
+
+.gh-cap-toggle-btn--active {
+  border-color: var(--gh-success);
+  background-color: var(--gh-success-light);
+  color: var(--gh-success);
+}
+
+/* Specialists Management */
+.gh-specialists-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--gh-surface-2);
+  padding: 16px;
+  border-radius: var(--gh-radius);
+  border: 1px solid var(--gh-border);
+}
+
+.gh-specialists-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gh-specialist-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--gh-radius-full);
+  background-color: var(--gh-surface);
+  border: 1px solid var(--gh-border);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gh-text);
+}
+
+.gh-specialist-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gh-text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.gh-specialist-remove-btn:hover {
+  color: var(--gh-danger);
+}
+
+.gh-quick-add-specialists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .gh-hospital-grid {
+    grid-template-columns: 1fr;
+  }
+  .gh-hospital-select {
+    width: 100%;
+    min-width: 0;
+  }
+}

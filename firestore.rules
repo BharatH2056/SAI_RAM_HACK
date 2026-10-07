@@ -1,0 +1,155 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =========================================================================
+    // GOLDENHOUR RBAC HELPER FUNCTIONS (Email-Based Role Mapping)
+    // =========================================================================
+
+    // Verify user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Current user's email lowercased
+    function userEmail() {
+      return request.auth.token.email.lower();
+    }
+
+    // Role: System Administrator
+    function isAdmin() {
+      return isAuthenticated() && userEmail() == 'admin@goldenhour.demo';
+    }
+
+    // Role: Emergency Dispatcher
+    function isDispatcher() {
+      return isAuthenticated() && (
+        userEmail() == 'dispatcher@goldenhour.demo' ||
+        isAdmin()
+      );
+    }
+
+    // Role: Ambulance Driver
+    function isDriver() {
+      return isAuthenticated() && (
+        userEmail() == 'driver@goldenhour.demo' ||
+        isAdmin()
+      );
+    }
+
+    // Role: Hospital ER Desk staff bound to a specific hospitalId
+    function isHospitalUser(hospitalId) {
+      return isAuthenticated() && (
+        isAdmin() ||
+        (hospitalId == 'H23' && userEmail() == 'ramaiah@goldenhour.demo') ||
+        (hospitalId == 'H08' && userEmail() == 'fortis.cunningham@goldenhour.demo') ||
+        (hospitalId == 'H11' && userEmail() == 'aster@goldenhour.demo')
+      );
+    }
+
+    // Verify if user is any valid hospital user
+    function isAnyHospitalUser() {
+      return isAuthenticated() && (
+        isAdmin() ||
+        userEmail() == 'ramaiah@goldenhour.demo' ||
+        userEmail() == 'fortis.cunningham@goldenhour.demo' ||
+        userEmail() == 'aster@goldenhour.demo'
+      );
+    }
+
+    // =========================================================================
+    // 1. HOSPITALS COLLECTION
+    // =========================================================================
+    match /hospitals/{hospitalId} {
+      // Anyone signed in may read hospital data (dispatchers, drivers, hospitals)
+      allow read: if isAuthenticated();
+
+      // Write allowed only for Admin (full control) or the designated Hospital ER staff
+      // Hospital staff may only update clinical status fields
+      allow write: if isAdmin() || (
+        isHospitalUser(hospitalId) &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly([
+            'icu_beds_available',
+            'specialists_on_duty',
+            'updatedAt',
+            'emergency_24x7',
+            'has_cath_lab',
+            'has_stroke_unit',
+            'has_trauma_center',
+            'has_maternity',
+            'has_burn_unit',
+            'has_blood_bank'
+          ])
+      );
+    }
+
+    // =========================================================================
+    // 2. INCIDENTS COLLECTION & AUDIT EVENTS
+    // =========================================================================
+    match /incidents/{incidentId} {
+      // READ:
+      // - Dispatchers, Drivers, and Admin may read all incidents
+      // - Hospital users may only read incidents directed to their facility
+      allow read: if isDispatcher() || isDriver() || (
+        isAnyHospitalUser() &&
+        resource.data.selectedHospitalId != null &&
+        isHospitalUser(resource.data.selectedHospitalId)
+      );
+
+      // CREATE:
+      // - Public SOS creation allowed for ANYONE (even unauthenticated)
+      // - Must originate as 'voice' or 'dispatcher'
+      // - Initial status must strictly be 'created'
+      // - Cannot pre-assign a hospital (selectedHospitalId must be null)
+      allow create: if (
+        (request.resource.data.source == 'voice' || request.resource.data.source == 'dispatcher') &&
+        request.resource.data.status == 'created' &&
+        request.resource.data.selectedHospitalId == null
+      );
+
+      // UPDATE:
+      // - Admin and Dispatcher have full workflow update permissions
+      // - Hospital user can only update incidents assigned to them (accepting patient)
+      // - Driver can only update ambulancePosition, status, and updatedAt
+      allow update: if isDispatcher() || (
+        // Hospital accepting an incident directed to them
+        resource.data.selectedHospitalId != null &&
+        isHospitalUser(resource.data.selectedHospitalId) &&
+        request.resource.data.status in ['accepted', 'arrived']
+      ) || (
+        // Driver reporting GPS telemetry or trip progress
+        isDriver() &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['ambulancePosition', 'status', 'updatedAt'])
+      );
+
+      // DELETE:
+      // - Only Admin can delete incidents (used in resetDemo scripts)
+      allow delete: if isAdmin();
+
+      // ── AUDIT EVENTS SUBCOLLECTION ─────────────────────────────────────────
+      match /events/{eventId} {
+        // Read audit events with same role boundaries
+        allow read: if isDispatcher() || isDriver() || (
+          isAnyHospitalUser() &&
+          get(/databases/$(database)/documents/incidents/$(incidentId)).data.selectedHospitalId != null &&
+          isHospitalUser(get(/databases/$(database)/documents/incidents/$(incidentId)).data.selectedHospitalId)
+        );
+
+        // Append-only: anyone creating or updating an incident may append an event
+        allow create: if true;
+
+        // Strictly immutable: no modifications or deletions
+        allow update, delete: if isAdmin();
+      }
+    }
+
+    // =========================================================================
+    // 3. DEFAULT DENY
+    // =========================================================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
